@@ -1,10 +1,6 @@
-import type { ReactNode } from "react";
+import { LayoutProps } from "../types";
 import NavBar from "./components/NavBar";
 import "./globals.css";
-
-interface LayoutProps {
-  children: ReactNode;
-}
 
 function RootLayout({ children }: LayoutProps) {
   return (
