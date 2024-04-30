@@ -1,6 +1,12 @@
-import Orbitron from "next/font/local";
+import { Orbitron, Exo_2 } from "next/font/google";
+
 
 export const orbitron = Orbitron({
-    src: "../public/fonts/Orbitron/Orbitron-VariableFont_wght.ttf",
+    subsets: ["latin"],
     variable: "--font-orbitron"
+})
+
+export const exo2 = Exo_2({
+    subsets: ["latin"],
+    variable: "--font-exo2"
 })
