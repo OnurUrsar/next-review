@@ -3,7 +3,7 @@ import { getReview } from "@/lib/reviews";
 
 async function ReviewPage({ params: { slug } }: any) {
   const review = await getReview(slug);
-
+  console.log("Review Page rendering", slug);
   return (
     <>
       <Heading>{review.title}</Heading>
