@@ -4,6 +4,14 @@ import NavBar from "./components/NavBar";
 import { exo2, orbitron } from "./fonts";
 import "./globals.css";
 
+export const metadata = {
+  title: {
+    default: "Indie Gamer",
+    template: "%s | Indie Gamer",
+  },
+  description: "Only the best indie games, reviewed for you.",
+};
+
 function RootLayout({ children }: LayoutProps): ReactNode {
   console.log(orbitron.className);
   return (

@@ -1,9 +1,18 @@
 import Heading from "@/app/components/Heading";
 import { getReview, getSlugs } from "@/lib/reviews";
+import { title } from "process";
+import ShareLinkButton from "../../components/ShareLinkButton";
 
 export async function generateStaticParams() {
   const slugs = await getSlugs();
   return slugs.map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({ params: { slug } }: any) {
+  const review = await getReview(slug);
+  return {
+    title: review.title,
+  };
 }
 
 async function ReviewPage({ params: { slug } }: any) {
@@ -12,7 +21,11 @@ async function ReviewPage({ params: { slug } }: any) {
   return (
     <>
       <Heading>{review.title}</Heading>
-      <p className="italic pb-2">{review.date}</p>
+      <div className="flex gap-3 items-baseline">
+        <p className="italic pb-2">{review.date}</p>
+        <ShareLinkButton />
+      </div>
+
       <img
         src={review.image}
         alt="stardew valley image"
